@@ -28,7 +28,7 @@ $(".btn").click( function(){
   if(started){
     CheckAnswer(userPattern.length-1);
   }
-  CheatersCounter();
+  //CheatersCounter();
 
 
 })
@@ -83,7 +83,7 @@ function nextSequence()
   playSound(randomChosenColour);
 
 
-  CheatersCounter();
+  //CheatersCounter();
 
 }
 
@@ -118,21 +118,21 @@ function animatePress(currentColour){
 }
 
 
-function CheatersCounter(){
-  setTimeout(function(){
-    cheatingMins++;
-    if(cheatingMins > 4){
-      alert("Where r u?🤔");
-      alert("Your Cheating🤬");
-      wrong();
-      return;
-    }
-    else{
-      CheatersCounter();
-    }
-  },6000);
-
-}
+// function CheatersCounter(){
+//   setTimeout(function(){
+//     cheatingMins++;
+//     if(cheatingMins > 4){
+//       alert("Where r u?🤔");
+//       alert("Your Cheating🤬");
+//       wrong();
+//       return;
+//     }
+//     else{
+//       CheatersCounter();
+//     }
+//   },6000);
+//
+// }
 
 function startOver(){
   cheatingMins=0;

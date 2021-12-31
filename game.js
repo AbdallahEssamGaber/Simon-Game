@@ -19,8 +19,15 @@ $(document).keypress(function() {
   }
 });
 
+jQuery( "body" ).on( "tap", function( event ) {
 
+  if(!started){
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    started=true;
+ }
 
+})
 
 $(".btn").click( function(){
   if(!started) return;

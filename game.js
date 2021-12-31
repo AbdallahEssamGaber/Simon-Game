@@ -23,6 +23,7 @@ $(".btn").click( function(){
   clicked=true;
   cheatingMins=0;
   var userChosenColour = $(this).attr("id");
+  console.log(userChosenColour);
   userPattern.push(userChosenColour);
   playSound(userChosenColour);
   animatePress(userChosenColour);
@@ -68,6 +69,7 @@ function CheckAnswer(currentLevel){
 }
 function nextSequence()
 {
+  started = false;
   delay=delay-100;
   console.log(delay);
   userPattern = [];
@@ -83,7 +85,9 @@ function nextSequence()
 
   playSound(randomChosenColour);
 
-
+  setTimeout(function(){
+    started = true;
+  }, delay * 2)
   //CheatersCounter();
 
 }
@@ -108,6 +112,7 @@ function wrong(){
 function playSound(name){
   var audio = new Audio("sounds/" + name + ".mp3");
   audio.play();
+
 }
 
 

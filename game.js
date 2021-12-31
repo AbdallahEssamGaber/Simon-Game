@@ -9,21 +9,17 @@ var level = 0,
 var started=false,
     changed=false,
     clicked=false;
-// $(document).keypress(function() {
-//   if(!started){
-//     $("#level-title").text("Level " + level);
-//     nextSequence();
-//     started=true;
-//   }
-// });
 
-$('.btn').on('tap', function(e) {
+
+$(document).keypress(function() {
   if(!started){
-      $("#level-title").text("Level " + level);
-      nextSequence();
-      started=true;
-    }
-}, false);
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    started=true;
+  }
+});
+
+
 
 
 $(".btn").click( function(){

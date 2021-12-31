@@ -17,16 +17,11 @@ var started=false,
 //   }
 // });
 
-document.on('tap', function() {
-    if(!started) return;
-    clicked=true;
-    cheatingMins=0;
-    var userChosenColour = $(this).attr("id");
-    userPattern.push(userChosenColour);
-    playSound(userChosenColour);
-    animatePress(userChosenColour);
-    if(started){
-      CheckAnswer(userPattern.length-1);
+document.on("singletap", function() {
+  if(!started){
+      $("#level-title").text("Level " + level);
+      nextSequence();
+      started=true;
     }
 }, false);
 

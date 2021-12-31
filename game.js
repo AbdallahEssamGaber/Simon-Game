@@ -17,7 +17,7 @@ var started=false,
 //   }
 // });
 
-document.on("singletap", function() {
+$('.btn').on('tap', function(e) {
   if(!started){
       $("#level-title").text("Level " + level);
       nextSequence();

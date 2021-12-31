@@ -17,8 +17,7 @@ var started=false,
 //   }
 // });
 
-document.addEventListener('touchstart', function(e) {
-    e.preventDefault();
+document.addEventListener('tap', function(e) {
     if(!started) return;
     clicked=true;
     cheatingMins=0;

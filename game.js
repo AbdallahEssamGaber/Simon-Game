@@ -17,23 +17,38 @@ $(document).keypress(function() {
   }
 });
 
+document.addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    if(!started) return;
+    clicked=true;
+    cheatingMins=0;
+    var userChosenColour = $(this).attr("id");
+    userPattern.push(userChosenColour);
+    playSound(userChosenColour);
+    animatePress(userChosenColour);
+    if(started){
+      CheckAnswer(userPattern.length-1);
+    }
+}, false);
 
-$(".btn").click( function(){
-  if(!started) return;
-  clicked=true;
-  cheatingMins=0;
-  var userChosenColour = $(this).attr("id");
-  console.log(userChosenColour);
-  userPattern.push(userChosenColour);
-  playSound(userChosenColour);
-  animatePress(userChosenColour);
-  if(started){
-    CheckAnswer(userPattern.length-1);
-  }
-  //CheatersCounter();
+
+// $(".btn").click( function(){
+//   if(!started) return;
+//   clicked=true;
+//   cheatingMins=0;
+//   var userChosenColour = $(this).attr("id");
+//   userPattern.push(userChosenColour);
+//   playSound(userChosenColour);
+//   animatePress(userChosenColour);
+//   if(started){
+//     CheckAnswer(userPattern.length-1);
+//   }
+//   //CheatersCounter();
+//
+//
+// })
 
 
-})
 function CheckAnswer(currentLevel){
 
   if(gamePattern[currentLevel] == userPattern[currentLevel]){
@@ -85,6 +100,7 @@ function nextSequence()
 
   playSound(randomChosenColour);
 
+  //Wait dont rush let me show you what to click on!
   setTimeout(function(){
     started = true;
   }, delay * 2)

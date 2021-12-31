@@ -19,6 +19,7 @@ $(document).keypress(function() {
 
 
 $(".btn").click( function(){
+  if(!started) return;
   clicked=true;
   cheatingMins=0;
   var userChosenColour = $(this).attr("id");

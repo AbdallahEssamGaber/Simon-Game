@@ -9,13 +9,13 @@ var level = 0,
 var started=false,
     changed=false,
     clicked=false;
-$(document).keypress(function() {
-  if(!started){
-    $("#level-title").text("Level " + level);
-    nextSequence();
-    started=true;
-  }
-});
+// $(document).keypress(function() {
+//   if(!started){
+//     $("#level-title").text("Level " + level);
+//     nextSequence();
+//     started=true;
+//   }
+// });
 
 document.addEventListener('touchstart', function(e) {
     e.preventDefault();
@@ -32,23 +32,21 @@ document.addEventListener('touchstart', function(e) {
 }, false);
 
 
-// $(".btn").click( function(){
-//   if(!started) return;
-//   clicked=true;
-//   cheatingMins=0;
-//   var userChosenColour = $(this).attr("id");
-//   userPattern.push(userChosenColour);
-//   playSound(userChosenColour);
-//   animatePress(userChosenColour);
-//   if(started){
-//     CheckAnswer(userPattern.length-1);
-//   }
-//   //CheatersCounter();
-//
-//
-// })
+$(".btn").click( function(){
+  if(!started) return;
+  clicked=true;
+  cheatingMins=0;
+  var userChosenColour = $(this).attr("id");
+  userPattern.push(userChosenColour);
+  playSound(userChosenColour);
+  animatePress(userChosenColour);
+  if(started){
+    CheckAnswer(userPattern.length-1);
+  }
+  //CheatersCounter();
 
 
+})
 function CheckAnswer(currentLevel){
 
   if(gamePattern[currentLevel] == userPattern[currentLevel]){

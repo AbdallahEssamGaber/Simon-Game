@@ -17,7 +17,7 @@ var started=false,
 //   }
 // });
 
-document.addEventListener('tap', function(e) {
+document.on('tap', function() {
     if(!started) return;
     clicked=true;
     cheatingMins=0;
